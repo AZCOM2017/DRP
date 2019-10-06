@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>DRP</display-name>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>StudentServlet</servlet-name>
+    <servlet-class>Servlet.StudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentServlet</servlet-name>
+    <url-pattern>/Servlet/StudentServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>Practice.TestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/Practice/TestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CookieServlet</servlet-name>
+    <servlet-class>Cookie.CookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieServlet</servlet-name>
+    <url-pattern>/Cookie/CookieServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ShowCookie</servlet-name>
+    <servlet-class>Cookie.ShowCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowCookie</servlet-name>
+    <url-pattern>/Cookie/ShowCookie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SetSessionServlet</servlet-name>
+    <servlet-class>Session.SetSessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetSessionServlet</servlet-name>
+    <url-pattern>/Session/SetSessionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ShowSessionServlet</servlet-name>
+    <servlet-class>Session.ShowSessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowSessionServlet</servlet-name>
+    <url-pattern>/Session/ShowSessionServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>Servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/Servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>Servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/Servlet/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 配置过滤器Filter -->
+  <filter>
+  <filter-name>CharsetEncodingFilter</filter-name>
+  <filter-class>util.filter.CharsetEncodingFilter</filter-class>
+  
+  <init-param>
+  <param-name>encoding</param-name>
+  <param-value>utf-8</param-value>
+  </init-param>
+  </filter>
+  
+  <filter-mapping>
+  <filter-name>CharsetEncodingFilter</filter-name>
+  <url-pattern>*.jsp</url-pattern><!-- 对所有的JSP起作用 -->
+  </filter-mapping>
+  
+  <!-- 设置session过期时间为60分钟 -->
+  <session-config>
+  <session-timeout>60</session-timeout>
+  </session-config>
+</web-app>
